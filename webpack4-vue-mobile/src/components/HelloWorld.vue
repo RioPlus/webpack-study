@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
     <h1 style="font-size: 20px">{{ msg }}</h1>
+    <h2 >国际化测试： {{$t('message.getCode')}}</h2>
+    <button @click="changeLang">中英切换</button>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -23,6 +25,15 @@ export default {
     const url="/music/splcloud/fcgi-bin/gethotkey.fcg?_=1653318556424&cv=4747474&ct=24&format=json&inCharset=utf-8&outCharset=utf-8&notice=0&platform=yqq.json&needNewCode=1&uin=0&g_tk_new_20200303=5381&g_tk=5381&hostUin=0";
      const {data} = await axios.get(url)
       console.log(data)
+  },
+  methods: {
+    changeLang(){
+      if(this.$i18n.locale === 'cn') {
+        this.$i18n.locale = 'en'
+      } else {
+         this.$i18n.locale = 'cn'
+      }
+    }
   }
 }
 </script>
