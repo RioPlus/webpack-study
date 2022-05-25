@@ -4,8 +4,10 @@ import App from "./App.vue";
 import i18n from "./assets/lang";
 
 // 导入后相当于动态设置了不用屏幕下的font-size
-
 import "lib-flexible";
+
+// 开启mock
+import "./mock/index.js"
 
 Vue.config.productionTip = false;
 
